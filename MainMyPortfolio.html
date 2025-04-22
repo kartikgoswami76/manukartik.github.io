@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manu Kartik - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: white;
+      --card-bg: #1e293b;
+      --accent-color: #38bdf8;
+      --btn-hover: #0ea5e9;
+    }
+    body.light {
+      --bg-color: #f8fafc;
+      --text-color: #000;
+      --card-bg: #ffffff;
+      --accent-color: #2563eb;
+      --btn-hover: #1d4ed8;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 40px;
+      text-align: left;
+    }
+    .header-left {
+      text-align: left;
+      margin-left: 90px;
+    }
+    .header-right {
+      max-width: 60%;
+      text-align: left;
+      margin-right: 120px;
+    }
+    .profile-pic {
+      width:250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-top: 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      color: var(--accent-color);
+    }
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin: 10px 0;
+    }
+    .toggle-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      background: var(--accent-color);
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+    }
+    .btn {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      margin-top: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: var(--btn-hover);
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px;
+      width: 300px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card h2 {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+    .card p, .card ul {
+      color: #aaa;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0e0e0e;
+      color: #aaa;
+    }
+    form {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-left, .header-right {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+    .header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #318298, #0c2441);
+  border-radius: 20px;
+  color: white;
+  font-weight: bolder;
+  flex-wrap: wrap;
+}
+
+.profile-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #2d6ff2;
+  box-shadow: 0 5px 15px rgba(9, 155, 240, 0.4);
+}
+
+.profile-image {
+  margin-right: 40px;
+}
+
+.profile-info h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.profile-info p {
+  font-size: 20px;
+  height: 40px;
+  font-style: italic;
+}
+
+.social-buttons a {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: white;
+  color: #0072ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.social-buttons a:hover {
+  background-color: #0072ff;
+  color: white;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .header-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="header-flex">
+    <div class="profile-image">
+      <img src="My Pic.jpeg" alt="Profile Photo">
+    </div>
+    <div class="profile-info">
+      <h1>Manu Goswami</h1>
+      <p><span id="typed-text"></span></p>
+      <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/manukartikgoswami" target="_blank">LinkedIn</a>
+        <a href="https://github.com/kartikgoswami76" target="_blank">GitHub</a>
+        <a href="https://siei.edug.in/" target="_blank">Website</a>
+      </div>
+    </div>
+  </header>
+  
+
+  <section class="container">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am currently pursuing BCA from Shree Dev Suman University and working as a part-time computer instructor at Srishti IT Education. I aim to become a full-stack software engineer and focus on learning Python, C++, React, JavaScript, and more.</p>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>✅ Python Programming</li>
+        <li>✅ C++ Development</li>
+        <li>✅ HTML & CSS Design</li>
+        <li>✅ JavaScript & React</li>
+        <li>✅ Git & GitHub</li>
+        <li>✅ Online Teaching</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Projects</h2>
+      <ul>
+        <li>🔹 Portfolio Website</li>
+        <li>🔹 Python Lucky Number Game</li>
+        <li>🔹 Student Portal UI Design</li>
+        <li>🔹 More Projects Coming Soon!</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Resume & Certificates</h2>
+      <a href="#" class="btn">Download Resume</a>
+      <a href="#" class="btn">View Certificates</a>
+    </div>
+
+    <div class="card">
+      <h2>Experience</h2>
+      <p><strong>Computer Instructor</strong><br>Srishti IT Education (Online) - Part-time<br>Teaching fundamental computer and programming skills to students.</p>
+    </div>
+
+    <div class="card">
+      <h2>Testimonials</h2>
+      <p><strong>Student Review:</strong> "Manu sir is an excellent teacher. He explains concepts very clearly and motivates us to grow in IT field."</p>
+      <p><strong>Student Review:</strong> "I improved my skills a lot with his classes. He gives personal attention and helps even after the class ends."</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/your-email-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Nick Name (Kartik Goswami) | All rights reserved | Visit: <a href="https://siei.edug.in/" target="_blank" style="color: var(--accent-color); text-decoration: none;">sieiedug.in</a></p>
+  </footer>
+
+
+  <script>
+    var typed = new Typed('#typed-text', {
+      strings: [
+        "Software Engineer in Progress 💻",
+        "Python & Web Developer 🐍🌐",
+        "Online IT Instructor 📚",
+        "Helping Others Grow 🚀"
+      ],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      showCursor: true,
+      cursorChar: '|'
+    });
+  </script>
+  
+</body>
+</html>
